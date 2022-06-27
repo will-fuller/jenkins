@@ -60,7 +60,7 @@ Task("Clean")
     {
     // delete Precompiled web directory - otherwise deleted/ renamed files and directories
     // remain in the directory.
-    CleanDirectory(System.IO.Path.Combine(_publishFolderWeb,"/*"));
+    // CleanDirectory(System.IO.Path.Combine(_publishFolderWeb,"/*"));
     CleanDirectory(_xunitTestResultsDirectory);
     CleanSolutions(_allSolutions);
 
