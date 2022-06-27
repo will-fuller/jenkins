@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                //  powershell 'Write-Output "Building"'
+                 powershell 'Write-Output "Building"'
             }
         }
         stage('Test') { 
-            steps {
-                // 
-            }
+            // steps {
+            //     // 
+            // }
         }
         stage('Deploy') { 
-            steps {
-                // 
-            }
+            // steps {
+            //     // 
+            // }
         }
     }
 }
