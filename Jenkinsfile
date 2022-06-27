@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                 powershell 'ni artifacts'
                  powershell '.\\build.ps1 -Target CIBuild -Configuration "Production"'
-                //  powershell -noexit "& "".\\run-tests.ps1"""
             }
         }
     }
