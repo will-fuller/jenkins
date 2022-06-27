@@ -6,15 +6,5 @@ pipeline {
                  powershell 'Write-Output "Building"'
             }
         }
-        stage('Test') { 
-            // steps {
-            //     // 
-            // }
-        }
-        stage('Deploy') { 
-            // steps {
-            //     // 
-            // }
-        }
     }
 }
