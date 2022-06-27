@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResearchTHM.API", "..\src\ResearchTHM.API\ResearchTHM.API.csproj", "{4AD16F06-C15A-4D06-9A97-4B588B547D34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResearchTHM.Core", "..\src\ResearchTHM.Core\ResearchTHM.Core.csproj", "{BEB5BF2B-B808-4BF5-9E6E-C972BE41986F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResearchTHM.Services", "..\src\ResearchTHM.Services\ResearchTHM.Services.csproj", "{95C83607-894B-4ED8-A562-4F8209195780}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Any CPU = Development|Any CPU
+		Production|Any CPU = Production|Any CPU
+		Syven|Any CPU = Syven|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AD16F06-C15A-4D06-9A97-4B588B547D34}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{4AD16F06-C15A-4D06-9A97-4B588B547D34}.Development|Any CPU.Build.0 = Development|Any CPU
+		{4AD16F06-C15A-4D06-9A97-4B588B547D34}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD16F06-C15A-4D06-9A97-4B588B547D34}.Production|Any CPU.Build.0 = Release|Any CPU
+		{4AD16F06-C15A-4D06-9A97-4B588B547D34}.Syven|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD16F06-C15A-4D06-9A97-4B588B547D34}.Syven|Any CPU.Build.0 = Debug|Any CPU
+		{BEB5BF2B-B808-4BF5-9E6E-C972BE41986F}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{BEB5BF2B-B808-4BF5-9E6E-C972BE41986F}.Development|Any CPU.Build.0 = Development|Any CPU
+		{BEB5BF2B-B808-4BF5-9E6E-C972BE41986F}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB5BF2B-B808-4BF5-9E6E-C972BE41986F}.Production|Any CPU.Build.0 = Release|Any CPU
+		{BEB5BF2B-B808-4BF5-9E6E-C972BE41986F}.Syven|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB5BF2B-B808-4BF5-9E6E-C972BE41986F}.Syven|Any CPU.Build.0 = Debug|Any CPU
+		{95C83607-894B-4ED8-A562-4F8209195780}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{95C83607-894B-4ED8-A562-4F8209195780}.Development|Any CPU.Build.0 = Development|Any CPU
+		{95C83607-894B-4ED8-A562-4F8209195780}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{95C83607-894B-4ED8-A562-4F8209195780}.Production|Any CPU.Build.0 = Release|Any CPU
+		{95C83607-894B-4ED8-A562-4F8209195780}.Syven|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C83607-894B-4ED8-A562-4F8209195780}.Syven|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B96278B7-1551-447F-AEBC-CBB66C018AE6}
+	EndGlobalSection
+EndGlobal

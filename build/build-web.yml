@@ -1,0 +1,55 @@
+# prevents builds for each Pull Request, since we already have build per branch
+pr: none
+
+trigger:
+  branches:
+    include:
+    - bug*
+    - dev
+    - feature*
+    - release*
+    - hotfix*
+    - master
+  paths:      
+    exclude:
+    - /
+    include:
+    - /build/core.cake
+    - /build/build-web.yml
+    - /build/build.cake
+    - /build.ps1
+    - /src/
+pool:
+  vmImage: windows-latest
+
+steps:
+- task: PowerShell@2
+  displayName: CIBuild. (Clean, Nuget, Build, UnitTests, Publish).
+  inputs:
+    targetType: 'filePath'
+    filePath: '.\build.ps1'
+    arguments: -Target CIBuildWeb -Configuration Development
+    errorActionPreference: 'stop'
+    script: 
+
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results'
+  inputs:
+    testResultsFormat: VSTest
+    testResultsFiles: '$(System.DefaultWorkingDirectory)\Artifacts\UnitTestResults\*.trx'
+    failTaskOnFailedTests: true 
+
+- task: ArchiveFiles@2
+  displayName: ZIP Artifacts
+  inputs:
+    rootFolderOrFile: '.\Artifacts\'
+    includeRootFolder: false 
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Web.$(Build.BuildId).zip' 
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifacts
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/Web.$(Build.BuildId).zip' 
+    artifactName: 'build-Web'

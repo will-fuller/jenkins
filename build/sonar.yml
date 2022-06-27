@@ -1,0 +1,56 @@
+# prevents builds for each Pull Request, since we already have build per branch
+pr: none
+
+trigger:
+  branches:
+    include:
+    - dev
+    - master
+
+  paths:      
+    exclude:
+    - /
+    include:
+    - /build/core.cake
+    - /build/build-web.yml
+    - /build/build.cake
+    - /build.ps1
+    - /src/
+
+pool:
+  vmImage: windows-latest
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
+  - java
+
+steps:
+- task: SonarSource.sonarcloud.xxxxxxxxxxxxxxxxxxxxxx
+  displayName: 'Prepare analysis on SonarCloud'
+  inputs:
+    SonarCloud: 'xxxxxxxxx Connection'
+    organization: 'xxxxx-xxx'
+    projectKey: 'xxxxx'
+    projectName: 'xxxxx-xxxx'
+    extraProperties: |
+     # Additional properties that will be passed to the scanner, 
+     # Put one key=value per line, example:
+     # sonar.exclusions=**/*.bin
+
+- task: PowerShell@2
+  displayName: CIBuild. (Clean, Nuget, Build, UnitTests, Publish).
+  inputs:
+    targetType: 'filePath'
+    filePath: '.\build.ps1'
+    arguments: -Target CIBuild  
+    errorActionPreference: 'stop'
+    script: 
+
+- task: SonarSource.sonarcloud.xxxxxxxxxxxxxxxxxxxxxx
+  displayName: 'Run Code Analysis'
+
+- task: SonarSource.sonarcloud.xxxxxxxxxxxxxxxxxxxxxxx
+  displayName: 'Publish Quality Gate Result'
+
+

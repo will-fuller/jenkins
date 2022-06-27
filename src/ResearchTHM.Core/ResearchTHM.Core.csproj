@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Configurations>Debug;Release;Development</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200407091735_UsageLogs.cs" />
+    <Compile Remove="Migrations\20200407091735_UsageLogs.Designer.cs" />
+    <Compile Remove="Migrations\20200507120657_notifyList.cs" />
+    <Compile Remove="Migrations\20200507120657_notifyList.Designer.cs" />
+    <Compile Remove="Migrations\20200514135746_cleanup.cs" />
+    <Compile Remove="Migrations\20200514135746_cleanup.Designer.cs" />
+    <Compile Remove="Migrations\20200526152745_AddGroupPriority.cs" />
+    <Compile Remove="Migrations\20200526152745_AddGroupPriority.Designer.cs" />
+    <Compile Remove="Migrations\20200526155218_AddGroupPrioritywithmktrunlog.cs" />
+    <Compile Remove="Migrations\20200526155218_AddGroupPrioritywithmktrunlog.Designer.cs" />
+    <Compile Remove="Migrations\20200526155959_AddGroupPriorityRunlog.cs" />
+    <Compile Remove="Migrations\20200526155959_AddGroupPriorityRunlog.Designer.cs" />
+    <Compile Remove="Migrations\20200526160705_AddGroupPriorityRunlog.cs" />
+    <Compile Remove="Migrations\20200526160705_AddGroupPriorityRunlog.Designer.cs" />
+    <Compile Remove="Migrations\20200610135704_prefColumnInVWUser.cs" />
+    <Compile Remove="Migrations\20200610135704_prefColumnInVWUser.Designer.cs" />
+    <Compile Remove="TrkdModels\DocSearchResponse.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Box.V2.Core" Version="3.26.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
