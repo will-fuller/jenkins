@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                 powershell 'Write-Output "Building"'
+                 powershell '.\build.ps1 -Target CIBuild -Configuration "Production"'
             }
         }
     }
